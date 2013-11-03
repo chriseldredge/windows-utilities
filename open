@@ -1,0 +1,12 @@
+#!/bin/bash
+
+for i; do
+  if [ ! -e "$i" ]; then
+    f=$PWD/$i
+  else
+    f=$i
+  fi
+  x="`cygpath -w $f`"
+  echo Opening file $x
+  cmd /c start "$x" &
+done
