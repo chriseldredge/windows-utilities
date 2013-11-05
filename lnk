@@ -1,0 +1,18 @@
+#!/bin/bash
+
+flag=""
+
+if [ $# -eq 3 ]; then
+  flag=`echo $1 | tr - /`
+  shift
+fi
+
+if [ $# -ne 2 ]; then
+  echo "usage: $0 {-j|-d} target alias"
+  exit 2
+fi
+
+target=`cygpath -w "$1"`
+link=`cygpath -w "$2"`
+
+cmd /c mklink $flag "$link" "$target"
