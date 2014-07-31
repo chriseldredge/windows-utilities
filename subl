@@ -1,4 +1,9 @@
 #!/bin/bash
 
-/cygdrive/c/Program\ Files/Sublime\ Text\ 2/sublime_text.exe `cygpath -w $@` &
+for i in "$@"
+do
+    /cygdrive/c/Program\ Files/Sublime\ Text\ 2/sublime_text.exe "`cygpath -w "$i"`" &
+done
+
+
 
