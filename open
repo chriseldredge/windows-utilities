@@ -6,7 +6,7 @@ for i; do
   else
     f=$i
   fi
-  x="`cygpath -w $f`"
+  x="`cygpath -a -w "$f"`"
   echo Opening file $x
-  cmd /c start "$x" &
+  cmd /c start "" "$x" &
 done
